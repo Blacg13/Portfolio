@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    background-color: light-dark(var(--white-color), var(--dark-color));
+    color: light-dark(var(--black-color), var(--white-color));
+    font-family: var(--text-font);
+    border-radius: var(--radius-value);
+}
+:root {
+    color-scheme: light dark;
+    --white-color: #F5F5F5;
+    --black-color: #1A1B25;
+    --primary-color: #2CA6A4;
+    --secondary-color: #A4AEAB;
+    --tertiary-color: #A54657;
+    
+    --title-font: "Consolas";
+    --text-font: "Montserrat";
+    
+    --radius-value: 20px 5px 20px 20px;
+    
+    font-family: "Consolas", "Montserrat";
+    scroll-behavior: smooth;
+}
+body {
+    margin: 60px;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: none;
+    gap: 60px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--title-font);
+    padding: 20px 15px 20px 30px;
+}
+header {
+    background-color: antiquewhite;
+    position: relative;
+    
+    section {
+        position: sticky;
+        /*todo: à checker : */
+        top: calc(50% - 200px);
+        min-width: 500px;
+        max-height: fit-content;
+        border: solid 6px var(--tertiary-color);
+    }
+}
+main {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+
+    section {
+        border: solid 6px var(--primary-color);
+
+        h2 {
+            border-radius: 20%;
+            cursor: pointer;
+        }
+        .panel {
+            display: none;
+            overflow: hidden;
+        }
+    }
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url("../public/fonts/MontserratAlternates-Regular.otf"), format("opentype");
+    font-weight: normal;
+    font-size: normal;
+}
+@font-face {
+    font-family: "Consolas";
+    src: url("../public/fonts/CONSOLA.TTF"), format("opentype");
+    font-weight: normal;
+    font-size: normal;
+}

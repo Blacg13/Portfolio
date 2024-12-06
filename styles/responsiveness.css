@@ -1,24 +1,23 @@
 body {
-    /* margin: 60px; */
     display: grid;
     grid-template-columns: 300px 3fr;
     grid-template-rows: none;
-    gap: 32px;
+    /* gap: var(--padding-value); */
 
     @media screen and (max-width: 600px) {
         display: flex;
         flex-direction: column;
 
         header {
-            box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
         }
     } 
      header {
+        background-color: light-dark(var(--white-color), var(--dark-color));
         min-width: 300px;
         max-width: 1000px;
-        min-height: 200px;
-        max-height: 600px;
-        /* position: sticky; */
+
      }
      main {
         min-width: 300px;

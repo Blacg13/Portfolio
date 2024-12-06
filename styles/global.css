@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    
-    background-color: light-dark(var(--white-color), var(--dark-color));
-    color: light-dark(var(--black-color), var(--white-color));
-    
+
     font-family: var(--text-font);
+    border-radius: var(--radius-value);
+
+    background-color: light-dark(var(--white-color), var(--dark-color));
+    color: light-dark(var(--dark-color), var(--white-color));
 }
 :root {
     color-scheme: light dark;
@@ -30,6 +31,16 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--title-font);
     padding: 20px 15px 20px 30px;
+}
+header {
+    background-color: var(--white-color);
+    color: var(--black-color);
+    z-index: 10000;
+    background-color: var(--secondary-color);
+}
+body {
+    background-color: var(--white-color);
+    color: var(--black-color);
 }
 @font-face {
     font-family: "Montserrat";

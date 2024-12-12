@@ -1,13 +1,10 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
     list-style: none;
 
     font-family: var(--text-font);
     border-radius: var(--radius-value);
-
-    background-color: var(--white-color);
-
 }
 :root {
     --white-color: #F5F5F5;
@@ -42,51 +39,59 @@ h1, h2, h3, h4, h5, h6 {
     font-family: var(--title-font);
     padding: 20px 15px 20px 30px;
 }
+li {
+    border-radius: var(--radius-value);
+    border: solid 6px var(--primary-color);
+}
 body {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     background-color: var(--white-color);
     color: var(--black-color);
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     body {
+        --height-value: 200px;
+
         display: flex;
         flex-direction: column;
+
         header {
             z-index: 1000;
-            padding: 16px 16px 64px 16px;
-            width: calc(100% - 32px);
-            height: inherit;
+            background-color: var(--white-color);
+            padding: var(--padding-value) var(--padding-value) calc(var(--padding-value) * 2) var(--padding-value);
+            height: var(--height-value);
+            width: calc(100% - var(--padding-value) * 2);
+            min-width: 200px;
+            max-width: 600px;
             position: fixed;
             top:0;
             left: 0;
-            height: 200px;
-            background-color: var(--white-color);
             mask: linear-gradient(rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0) 100%);
-
-            .blagasse {
-                 z-index: 2000;
-                    display: block;
-                    object-fit: fill;
-            }
+        }
+        main {
+            margin-top: calc(var(--height-value) + var(--padding-value) * 1.5);
+            max-width: 600px;
         }
         }
 }
-@media screen and (min-width: 600px) {
-    header {
-        min-width: 300px;
-        min-height: 150px;
-        ul {
-            .blagasse {
-                background-color: goldenrod;
-                position: fixed;
-                top: calc(50% - 100px);
-                left: 0;
-                width: 300px;
-                height: 200px;
-                z-index: 10000;
-            }
+@media screen and (min-width: 800px) {
+    body {
+        --width-value : 300px;
+
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        header {
+            z-index: 1000;
+            background-color: var(--white-color);
+            padding: 0px 0px 0px var(--padding-value);
+            width: var(--width-value);
+            position: fixed;
+            top: calc(50% - 100px);
+            left: 0;
+        }
+        main {
+            margin-left: calc(var(--width-value) + var(--padding-value));
         }
     }
 }

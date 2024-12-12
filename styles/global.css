@@ -6,11 +6,10 @@
     font-family: var(--text-font);
     border-radius: var(--radius-value);
 
-    background-color: light-dark(var(--white-color), var(--dark-color));
-    color: light-dark(var(--dark-color), var(--white-color));
+    background-color: var(--white-color);
+
 }
 :root {
-    color-scheme: light dark;
     --white-color: #F5F5F5;
     --black-color: #1A1B25;
     --primary-color: #2CA6A4;
@@ -27,20 +26,69 @@
     
     font-family: "Consolas", "Montserrat";
     scroll-behavior: smooth;
+    
+    /**color theme : light*/
+    /* color-scheme: light dark; */
+    background-color: var(--white-color);
+    color: var(--dark-color);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        background-color: var(--dark-color);
+        color: var(--white-color);
+    }
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--title-font);
     padding: 20px 15px 20px 30px;
 }
-header {
-    background-color: var(--white-color);
-    color: var(--black-color);
-    z-index: 10000;
-    background-color: var(--secondary-color);
-}
 body {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: var(--white-color);
     color: var(--black-color);
+}
+@media screen and (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        header {
+            z-index: 1000;
+            padding: 16px 16px 64px 16px;
+            width: calc(100% - 32px);
+            height: inherit;
+            position: fixed;
+            top:0;
+            left: 0;
+            height: 200px;
+            background-color: var(--white-color);
+            mask: linear-gradient(rgba(0, 0, 0, 1) 78%, rgba(0, 0, 0, 0) 100%);
+
+            .blagasse {
+                 z-index: 2000;
+                    display: block;
+                    object-fit: fill;
+            }
+        }
+        }
+}
+@media screen and (min-width: 600px) {
+    header {
+        min-width: 300px;
+        min-height: 150px;
+        ul {
+            .blagasse {
+                background-color: goldenrod;
+                position: fixed;
+                top: calc(50% - 100px);
+                left: 0;
+                width: 300px;
+                height: 200px;
+                z-index: 10000;
+            }
+        }
+    }
 }
 @font-face {
     font-family: "Montserrat";

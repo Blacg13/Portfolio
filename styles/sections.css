@@ -1,17 +1,5 @@
 
-header {
-    /* padding: var(--padding-value); */
 
-        li {
-            border: solid 6px var(--tertiary-color);
-            /* max-height: fit-content; */
-            /* border: solid 15px linear-gradient(#D20F2A, #A54657); */
-            /* border-width: 16px; */
-            /* border-style: solid; */
-            /* border-image: linear-gradient(#D20F2A, #A54657) 30; */
-            /* border-image: linear-gradient(#f6b73c, #4d9f0c) 30; */
-        }
-    }
 
 main {
     padding: var(--padding-value);

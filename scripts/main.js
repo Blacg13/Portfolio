@@ -5,7 +5,9 @@ const switchTheme = () => {
   let newTheme = dataTheme === 'light' ? 'dark' : 'light';
   rootElement.setAttribute('data-theme', newTheme);
 };
-document.querySelector('#themeSwitcher').addEventListener('click', switchTheme);
+document
+  .querySelector('#theme-switcher')
+  .addEventListener('click', switchTheme);
 
 // *********** pouet ***********
 const ACCORDION_TOGGLE_H2 = document.querySelectorAll('section > h2');

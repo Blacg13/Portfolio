@@ -35,58 +35,128 @@
     --tertiary-color: #D20F2A;
 }
 /*=====================================*/
-/** Layout & Media Queries**/
+/** Layout & Media Queries **/
 /*=====================================*/
-header {
-    z-index: 1000;
-    position: fixed;
-    left: 0;
+body {
+    height: 100vh;
+    width: 100vw;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
     body {
         --height-value: 250px;
 
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        header {
-            background-color: var(--bg-color);
-            padding: var(--padding-value) var(--padding-value) calc(var(--padding-value) * 2) var(--padding-value);
-            height: var(--height-value);
-            width: calc(100% - var(--padding-value) * 2);
-            min-width: 200px;
-            max-width: 600px;
-            top:0;
-            mask: linear-gradient(rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%); /**tenir à l'oeil*/
-        }
-        main {
-            margin-top: calc(var(--height-value) + var(--padding-value));
-            max-width: 600px;
-        }
-        }
+            .container {
+                padding-top: var(--padding-value);
+                display: flex;
+                flex-flow: column-reverse nowrap;
+            
+                header {
+                    display: flex;
+                    flex-flow: column-reverse nowrap;
+                    min-height: var(--height-value);
+                    width: 100vw;
+                    z-index: 1000;
+                    position: fixed;
+                    bottom: 0;
+                    background-color: var(--bg-color);
+                    padding: var(--padding-value);
+                    mask: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%); /**tenir à l'oeil*/
+                }
+                main {
+                    /* in the future ==> height: calc-size(fit-content, size + 15px); <== but it is not this day T_T */
+                    margin-top: var(--height-value);
+                    margin-bottom: var(--height-value);
+                    /* height: calc(200% + var(--height-value) * 2); */
+                    
+                    ul {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        gap: calc(var(--height-value) / 20);
+                    }
+                }
+            }
+    }
 }
-@media screen and (min-width: 800px) {
+@media screen and (600px < width < 1200px) {
+    body {
+        --width-value : 200px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+
+        .container {
+            width: 95%;
+            height: 95%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: calc(var(--width-value) / 1.5);
+            
+                header {
+                    padding: 0px 0px 0px var(--padding-value);
+                    width: var(--width-value);
+                
+                    li {
+                        min-width: var(--width-value);
+                        max-width: 500px;
+                    }
+                }
+                main {
+                    ul {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        gap: calc(var(--width-value) / 20);
+                        li {
+                            width: calc(var(--width-value) * 2);
+                        }
+                    }
+            }
+        }
+    }
+}
+@media screen and (min-width: 1200px) {
     body {
         --width-value : 300px;
 
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
+        
 
-        header {
-            padding: 0px 0px 0px var(--padding-value);
-            width: var(--width-value);
-            top: calc(50% - 100px);
-
-            li {
-                min-width: var(--width-value);
-                max-width: 500px;
-            }
-        }
-        main {
-            margin-left: calc(var(--width-value) + var(--padding-value));
-            li {
-                max-width: 800px;
+        .container {
+            width: 95%;
+            height: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: calc(var(--width-value) / 1.5);
+            
+                header {
+                    padding: 0px 0px 0px var(--padding-value);
+                    width: var(--width-value);
+                    /* top: calc(50% - 100px); */
+                
+                    li {
+                        min-width: var(--width-value);
+                        max-width: 500px;
+                    }
+                }
+                main {
+                    /* margin-left: calc(var(--width-value) + var(--padding-value)); */
+                    ul {
+                        display: flex;
+                        flex-flow: column nowrap;
+                        gap: calc(var(--width-value) / 20);
+                        li {
+                            width: calc(var(--width-value) * 2);
+                        }
+                    }
             }
         }
     }
@@ -100,6 +170,11 @@ header {
     
     header {
         background-color: var(--bg-color);
+
+        li {
+            border-radius: var(--radius-value);
+            border: solid 7px var(--tertiary-color);
+        }
     }
 }
 /*=====================================*/
@@ -131,8 +206,8 @@ h1, h2, h3, h4, h5, h6 {
 /*=====================================*/
 header {
     li {
-        border-radius: var(--radius-value);
-        border: solid 6px var(--tertiary-color);
+        display: block;
+        /*^....*/
     }
 }
 /*=====================================*/

@@ -18,12 +18,14 @@ document.querySelectorAll('.flip-card-checkbox').forEach((checkbox) => {
     let card = document.querySelector('.flip-card');
     if (checkbox.checked) {
       console.log('checked');
-      card.classList.remove('flip-false');
-      card.classList.add('flip-true');
+      // card.style.animation = 'flip-animation 1.8s ease-in-out';
+      // card.classList.remove('flip-false');
+      // card.classList.add('flip-true');
     } else {
       console.log('unchecked');
-      card.classList.remove('flip-true');
-      card.classList.add('flip-false');
+      // card.style.animation = 'flip-animation 1.8s reverse ease-in-out';
+      // card.classList.remove('flip-true');
+      // card.classList.add('flip-false');
     }
   });
 });

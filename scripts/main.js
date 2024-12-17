@@ -1,4 +1,6 @@
-// *********** switching themes (dark / light) ***********
+//=========================================
+// **** switching themes (dark / light) ***
+//=========================================
 const switchTheme = () => {
   const rootElement = document.documentElement;
   let dataTheme = rootElement.getAttribute('data-theme');
@@ -8,7 +10,23 @@ const switchTheme = () => {
 document
   .querySelector('#theme-switcher')
   .addEventListener('click', switchTheme);
-
+//==============================================
+// **** flipping cards (checked / unchecked) ***
+//==============================================
+document.querySelectorAll('.flip-card-checkbox').forEach((checkbox) => {
+  checkbox.addEventListener('change', () => {
+    let card = document.querySelector('.flip-card');
+    if (checkbox.checked) {
+      console.log('checked');
+      card.classList.remove('flip-false');
+      card.classList.add('flip-true');
+    } else {
+      console.log('unchecked');
+      card.classList.remove('flip-true');
+      card.classList.add('flip-false');
+    }
+  });
+});
 // *********** pouet ***********
 const ACCORDION_TOGGLE_H2 = document.querySelectorAll('section > h2');
 const ACCORDION_CONTENT = document.querySelectorAll('section > div');

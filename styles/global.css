@@ -17,6 +17,12 @@
             color: var(--txt-color);
         }
     }
+    label, button {
+        cursor: pointer;
+        user-select: none;
+        background-color: transparent;
+        border: none;
+    }
 }
 /*================================================================================================*/
 /** Custom properties **/
@@ -28,6 +34,7 @@
     --spacing-value: 24px;
     
     --radius-value: 20px 5px 20px 20px;
+    --reverse-radius-value: 5px 20px 20px 20px;
     --radius-link : 20px;
     --border-weight: 16px;
     --padding-value: 8px;
@@ -189,21 +196,27 @@ body {
 :root {
     background-color: var(--bg-color);
     color: var(--txt-color);
-    
     header {
         background-color: var(--bg-color);
     }
 }
+::selection {
+    color: var(--bg-color);
+    background-color: var(--txt-color);
+}
 /*================================================================================================*/
 /** Typography **/
 /*================================================================================================*/
-:root {
+p, a, li, div, span {
     font-family: var(--text-font);
     font-size: var(--txt-size);
     line-height: var(--spacing-value);
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--title-font);
+    font-size: calc(var(--txt-size) * 1.5);
+    letter-spacing: 2px;
+    line-height: calc(var(--spacing-value) * 1.2);
     padding: 20px 15px 20px 30px;
 }
 @font-face {
@@ -331,21 +344,99 @@ header {
 /** Components > MAIN **/
 /*================================================================================================*/
 main {
+    /*-------------------------------------------*/
+    /** general style **/
+    /*-------------------------------------------*/
     li {
+        border: none;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
         
-        border-radius: var(--radius-value);
-        border: solid 6px var(--primary-color);
-        h2 {
-            border-radius: 0px 0px 2px 2px;
+        .flip-card {
+            border-radius: var(--radius-value);
+            border: solid 6px var(--primary-color);
             
-            &:hover, &:focus {
-                /* border: solid 12px var(--primary-color); */
-                box-shadow: inset 0 0 64px 64px var(--primary-color);
-                transition: 0.35s;
+            .flip-card-label {
+                width: 100%;
+                height: 100%;
+                
+                &:hover, &:focus {
+                    /* border: solid 12px var(--primary-color); */
+                    box-shadow: inset 0 0 64px 64px var(--primary-color);
+                    /* box-shadow: 0 0 4px 2px var(--secondary-color); */
+                    transition: 0.35s;
+                }
             }
         }
+        .flip-false {
+            .flip-card-label {
+                display: flex;
+            }
+        }
+        .flip-true {
+            transform: rotateY(360deg);
+            transition: all 1.5s ease-in-out;
+            border-radius: var(--reverse-radius-value);
+            background-color: var(--primary-color);
+            padding-right: var(--padding-value);
+
+            .flip-card-label {
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+        
+    }
         .panel {
             display: none;
         }
+
+    /*-------------------------------------------*/
+    /** special typo **/
+    /*-------------------------------------------*/
+    li:not(:last-child) {
+        h3 {
+            text-transform: capitalize;
+            word-spacing: -12px;
+
+            &::before {
+                content: "./";
+            }
+        }
+    }
+    li:last-child {
+        h3 {
+            word-spacing: -12px;
+            
+            &::before {
+                content: ".";
+            }
+            
+        }
+    }
+    /*-------------------------------------------*/
+    /** flip card animation **/
+    /*-------------------------------------------*/
+    .flip-card {
+        perspective: 1000px;
+
+        /* .flip-card-inner {
+            position: relative;
+            transition: trnasform 0.8s;
+            transform-style: preserve-3d;
+        }
+        &:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        button {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        } */
+    }
+    .flip-animation {
+        transform: rotateY(180deg);
     }
 }

@@ -17,24 +17,11 @@ main {
                 text-transform: capitalize;
                 word-spacing: -12px;
                 
-                &::before {
-                    content: "./";
-                }
+                
                 
             }
         }
-        li:last-child {
-            h1, h2 {
-                border-radius: 20%;
-                cursor: pointer;
-                word-spacing: -12px;
-                
-                &::before {
-                    content: ".";
-                }
-                
-            }
-        }
+        
         .panel {
             display: none;
             overflow: hidden;

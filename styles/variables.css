@@ -1,0 +1,31 @@
+/*================================================================================================*/
+/** Custom properties **/
+/*================================================================================================*/
+:root {
+    --title-font: "Consolas";
+    --text-font: "Montserrat";
+    --txt-size: 16px;
+    --spacing-value: 24px;
+    
+    --radius-value: 20px 5px 20px 20px;
+    --reverse-radius-value: 5px 20px 20px 20px;
+    --radius-link : 20px;
+    --border-weight: 16px;
+    --padding-value: 8px;
+
+}
+/* https://www.youtube.com/watch?v=Xk12JtYG8rw&t=1579s */
+:root[data-theme="light"] {
+    --bg-color: #F5F5F5;
+    --txt-color: #1A1B25;
+    --primary-color: #2CA6A4;
+    --secondary-color: #A4AEAB;
+    --tertiary-color: #A54657;    
+}
+:root[data-theme="dark"] {
+    --bg-color: #1A1B25 ;
+    --txt-color: #F5F5F5;
+    --primary-color: #2CA6A4;
+    --secondary-color: #A4AEAB;
+    --tertiary-color: #D20F2A;
+}

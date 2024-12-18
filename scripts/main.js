@@ -13,21 +13,28 @@ document
 //==============================================
 // **** flipping cards (checked / unchecked) ***
 //==============================================
-document.querySelectorAll('.flip-card-checkbox').forEach((checkbox) => {
-  checkbox.addEventListener('change', () => {
-    let card = document.querySelector('.flip-card');
-    if (checkbox.checked) {
-      console.log('checked');
-      // card.style.animation = 'flip-animation 1.8s ease-in-out';
-      // card.classList.remove('flip-false');
-      // card.classList.add('flip-true');
-    } else {
-      console.log('unchecked');
-      // card.style.animation = 'flip-animation 1.8s reverse ease-in-out';
-      // card.classList.remove('flip-true');
-      // card.classList.add('flip-false');
-    }
-  });
+document.querySelectorAll('.flip-card-container').forEach((card) => {
+  let toggle = card.querySelectorAll(`${card.getAttribute('id')}`)
+  console.log(toggle);
+  
+
+  
+  
+  
+  // checkbox.addEventListener('change', () => {
+  //   let card = document.querySelector('.flip-card');
+  //   if (checkbox.checked) {
+  //     console.log('checked');
+  //     // card.style.animation = 'flip-animation 1.8s ease-in-out';
+  //     // card.classList.remove('flip-false');
+  //     // card.classList.add('flip-true');
+  //   } else {
+  //     console.log('unchecked');
+  //     // card.style.animation = 'flip-animation 1.8s reverse ease-in-out';
+  //     // card.classList.remove('flip-true');
+  //     // card.classList.add('flip-false');
+  //   }
+  // });
 });
 // *********** pouet ***********
 const ACCORDION_TOGGLE_H2 = document.querySelectorAll('section > h2');

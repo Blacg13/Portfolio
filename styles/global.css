@@ -323,8 +323,7 @@ main {
         justify-content: space-between;
         
         .flip-card {
-            border-radius: var(--radius-value);
-            border: solid 6px var(--primary-color);
+        border: solid 6px var(--primary-color);
             
             .flip-card-label {
                 width: 100%;
@@ -377,13 +376,13 @@ main {
     .flip-card-container {
         position: relative;
         width: 100%;
-         height: 100%;
+        height: 100%;
         text-align: center;
         transition: transform 0.8s;
         transform-style: preserve-3d;
     }
     /* todo: transfer the animation to JS with addEventListener on the radio input */
-    li:hover .flip-card-container {
+    .flip-card-container:hover {
         transform: rotateY(180deg);
       }
       /* todo: arrange style of the verso and hide it in the back of the flip-card (not like now) */
@@ -394,6 +393,7 @@ main {
         backface-visibility: hidden;
       }
     .card-recto {
+        border-radius: var(--radius-value);
         /* transition: all 2s ease-in-out; */
         .flip-card-label {
             display: flex;

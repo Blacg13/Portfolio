@@ -33,10 +33,13 @@ CHECKBOXES.forEach((checkbox) => {
         // (flipCardContainer.style.animation = 'flip-animation 0.8s ease-in-out'),
         (recto.style.display = 'none'),
         (verso.style.display = 'block'),
+        panel.classList.add('animate__fadeIn'),
+        (panel.style.transform = 'rotateY(180deg)'),
         (panel.style.display = 'block'))
       : ((flipCardContainer.style.transform = 'rotateY(0deg)'),
         (verso.style.display = 'none'),
         (recto.style.display = 'block'),
+        panel.classList.add('animate__fadeOut'),
         (panel.style.display = 'none'));
   });
 });

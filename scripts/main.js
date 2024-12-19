@@ -16,10 +16,11 @@ document
 //==============================================
 const CHECKBOXES = document.querySelectorAll('.flip-card-checkbox');
 CHECKBOXES.forEach((checkbox) => {
-  let flipCard = document.querySelector(`li#${checkbox.name}`);
+  let flipCardContainer = document.querySelector(`li#${checkbox.name}`);
+  let flipCard = flipCardContainer.querySelector('.flip-card');
   let recto = flipCard.querySelector('.card-recto');
   let verso = flipCard.querySelector('.card-verso');
-  let panel = flipCard.querySelector('.panel');
+  let panel = flipCardContainer.querySelector('.panel');
 
   checkbox.checked = false;
   verso.style.display = 'none';
@@ -28,31 +29,15 @@ CHECKBOXES.forEach((checkbox) => {
   checkbox.addEventListener('change', () => {
     console.log(checkbox.checked);
     checkbox.checked
-      ? ((flipCard.style.transform = 'rotateY(180deg)'),
+      ? ((flipCardContainer.style.transform = 'rotateY(180deg)'),
+        // (flipCardContainer.style.animation = 'flip-animation 0.8s ease-in-out'),
         (recto.style.display = 'none'),
         (verso.style.display = 'block'),
         (panel.style.display = 'block'))
-      : ((flipCard.style.transform = 'rotateY(0deg)'),
+      : ((flipCardContainer.style.transform = 'rotateY(0deg)'),
         (verso.style.display = 'none'),
         (recto.style.display = 'block'),
         (panel.style.display = 'none'));
-  });
-});
-let pouet = [pouet, pouet];
-pouet.forEach((checkbox) => {
-  checkbox.addEventListener('change', () => {
-    let card = document.querySelector('.flip-card');
-    if (checkbox.checked) {
-      console.log('checked');
-      // card.style.animation = 'flip-animation 1.8s ease-in-out';
-      // card.classList.remove('flip-false');
-      // card.classList.add('flip-true');
-    } else {
-      console.log('unchecked');
-      // card.style.animation = 'flip-animation 1.8s reverse ease-in-out';
-      // card.classList.remove('flip-true');
-      // card.classList.add('flip-false');
-    }
   });
 });
 

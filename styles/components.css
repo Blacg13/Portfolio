@@ -115,22 +115,26 @@ main {
     /** general style **/
     /*-------------------------------------------*/
     li {
-        border: solid 6px var(--primary-color);
-        border-radius: var(--radius-value);
         display: flex;
         flex-flow: column nowrap;
+        /* border: solid 6px var(--primary-color);
+        border-radius: var(--radius-value); */
         
         input {
             display: none;
         }
-
        label {
+
             div {
+                border: solid 6px var(--primary-color);
+                border-radius: var(--radius-value);
                 display: flex;
                 flex-flow: row nowrap;
+                
                 h3 {
                     width: 100%;
                     text-align: left;
+                    
                 }
             }
        }

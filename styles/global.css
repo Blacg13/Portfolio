@@ -75,6 +75,7 @@ body {
                     /* height: calc(200% + var(--height-value) * 2); */
                     
                     ul {
+                        height: 100%;
                         display: flex;
                         flex-flow: column nowrap;
                         gap: calc(var(--height-value) / 20);
@@ -147,13 +148,17 @@ body {
                     }
                 }
                 main {
+                    height: 100%;
                     /* margin-left: calc(var(--width-value) + var(--padding-value)); */
                     ul {
+                        height: 100%;
                         display: flex;
                         flex-flow: column nowrap;
+                        justify-content: center;
                         gap: calc(var(--width-value) / 20);
                         li {
                             width: calc(var(--width-value) * 2);
+                            max-height: max-content;
                         }
                     }
             }

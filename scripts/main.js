@@ -30,11 +30,15 @@ CHECKBOXES.forEach((checkbox) => {
     console.log(checkbox.checked);
     checkbox.checked
       ? ((flipCardContainer.style.transform = 'rotateY(180deg)'),
+        // flipCardContainer.classList.add(
+        //   'animate__animated',
+        //   'animate__fadeOut'
+        // ),
         // (flipCardContainer.style.animation = 'flip-animation 0.8s ease-in-out'),
         (recto.style.display = 'none'),
+        // (flipCardContainer.style.transform = 'rotateY(90deg)'),
         (verso.style.display = 'block'),
-        panel.classList.add('animate__fadeIn'),
-        (panel.style.transform = 'rotateY(180deg)'),
+        // panel.classList.add('animate__fadeIn'),
         (panel.style.display = 'block'))
       : ((flipCardContainer.style.transform = 'rotateY(0deg)'),
         (verso.style.display = 'none'),

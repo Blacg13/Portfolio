@@ -11,7 +11,9 @@
     --reverse-radius-value: 5px 20px 20px 20px;
     --radius-link : 20px;
     --border-weight: 16px;
-    --padding-value: 8px;
+    --padding-value: 16px;
+
+    --animate-duration: 0.8s;
 
 }
 /* https://www.youtube.com/watch?v=Xk12JtYG8rw&t=1579s */

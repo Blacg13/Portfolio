@@ -67,6 +67,7 @@ header {
                 background-color: var(--secondary-color);
                 &:hover {
                     background-color: var(--primary-color);
+                    /* todo : something strange about the shadow */
                     box-shadow: 2px 2px 4px 2px var(--secondary-color);
                     transition: all 0.1s ease-in-out;
                 }
@@ -215,6 +216,7 @@ main {
         }
     .panel {
         perspective: 1000px;
+        /* transform: rotateY('180deg'); */
         p {
 
             transform: rotateY(180deg);

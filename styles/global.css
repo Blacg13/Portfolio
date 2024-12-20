@@ -4,6 +4,7 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
     list-style: none;
+    overflow: hidden;
     
     a {
         text-decoration: none;

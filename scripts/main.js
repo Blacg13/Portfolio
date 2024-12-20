@@ -14,6 +14,7 @@ document
 //==============================================
 // **** flipping cards (checked / unchecked) ***
 //==============================================
+const UL = document.querySelector('main > ul');
 const CHECKBOXES = document.querySelectorAll('.flip-card-checkbox');
 CHECKBOXES.forEach((checkbox) => {
   let flipCardContainer = document.querySelector(`li#${checkbox.name}`);
@@ -30,6 +31,7 @@ CHECKBOXES.forEach((checkbox) => {
     console.log(checkbox.checked);
     checkbox.checked
       ? ((flipCardContainer.style.transform = 'rotateY(180deg)'),
+        UL.style.setProperty('justify-content', 'flex-start'),
         // flipCardContainer.classList.add(
         //   'animate__animated',
         //   'animate__fadeOut'
